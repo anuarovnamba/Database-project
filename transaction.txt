@@ -1,4 +1,4 @@
---if we enter product id that procedure return us other information about product
+1) if we enter product id that procedure return us other information about product
 create or replace procedure get_product(v_pid product.pid%TYPE)
 as
 v_size product.sizes%TYPE;
@@ -22,7 +22,7 @@ get_product(546);
 end;
 
 
---declare how many users our shop have 
+2) declare how many users our shop have 
 create or replace function count_users
 return number 
 is 
@@ -31,4 +31,35 @@ begin
 select count(*) into v_users_count
 from users;
 return v_users_count;
+end;
+
+declare 
+res number;
+begin
+res:=count_users;
+dbms_output.put_line('Count of users is ' || res);
+end;
+
+
+3) notifies you of a successful procedure
+create or replace procedure update_price(
+    pr_id in number,
+    new_price in number
+)
+is 
+begin 
+update product set price = new_price 
+where pid = pr_id;
+if SQL%ROWCOUNT = 0 then 
+RAISE_APPLICATION_ERROR(-20002, 'Product not found');
+else 
+dbms_output.put_line('Price updated successfully');
+end if;
+exception
+when others then
+dbms_output.put_line('Error: ' || SQLERRM);
+end;
+
+begin 
+update_price(10, 25990);
 end;
