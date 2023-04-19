@@ -20,3 +20,15 @@ end;
 begin 
 get_product(546);
 end;
+
+
+--declare how many users our shop have 
+create or replace function count_users
+return number 
+is 
+v_users_count number;
+begin 
+select count(*) into v_users_count
+from users;
+return v_users_count;
+end;
