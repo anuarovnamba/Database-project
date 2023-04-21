@@ -63,3 +63,28 @@ end;
 begin 
 update_price(10, 25990);
 end;
+
+4)return us average price of current category
+create or replace function avg_price(category varchar2) return number
+is 
+total number := 0; 
+product_count number := 0;
+begin 
+for prod in (select price from product where category = category)
+loop total := total + prod.price;
+product_count := product_count + 1;
+end loop;
+
+if product_count = 0 then 
+return 0;
+else 
+return total / product_count;
+end if;
+end;
+
+declare 
+res number;
+begin 
+res := avg_price('Skirt');
+dbms_output.put_line('Average price of skirts is: ' || res);
+end;
