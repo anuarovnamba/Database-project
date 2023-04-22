@@ -1,0 +1,256 @@
+FIRST
+1.1
+CREATE OR REPLACE PROCEDURE insert_product (
+   p_pid IN Product.pid%TYPE,
+   p_sid IN Product.sid%TYPE,
+   p_price IN Product.price%TYPE,
+   p_category IN Product.category%TYPE,
+   p_sizes IN Product.sizes%TYPE
+) As
+   category_error EXCEPTION;
+BEGIN
+   IF LENGTH(p_category) < 5 THEN
+      RAISE category_error;
+   ELSE
+      INSERT INTO Product (pid, sid, price, category, sizes) VALUES (p_pid, p_sid, p_price, p_category, p_sizes);
+   END IF;
+EXCEPTION
+   WHEN category_error THEN
+      DBMS_OUTPUT.PUT_LINE('Error: name of сategory must be at least 5 characters long.');
+END;
+
+1.2
+DECLARE
+    p_category Product.category%TYPE := 'Jacket';
+    p_pid Product.pid%TYPE;
+    p_sizes Product.sizes%TYPE;
+    p_price Product.price%TYPE;
+    p_sid Product.sid%TYPE;
+    c_error EXCEPTION;
+    PRAGMA EXCEPTION_INIT(c_error, -20001);
+    
+    CURSOR c_product IS
+        SELECT category, pid, sizes, price, sid
+        FROM product
+        WHERE category = p_category;
+BEGIN
+    IF LENGTH(p_category) < 5 THEN
+        RAISE c_error;
+    ELSE
+        OPEN c_product;
+        LOOP
+            FETCH c_product INTO p_category, p_pid, p_sizes, p_price, p_sid;
+            EXIT WHEN c_product%NOTFOUND;
+            DBMS_OUTPUT.PUT_LINE(p_pid);  
+            DBMS_OUTPUT.PUT_LINE(p_category);  
+            DBMS_OUTPUT.PUT_LINE(p_sizes);  
+            DBMS_OUTPUT.PUT_LINE(p_price);  
+            DBMS_OUTPUT.PUT_LINE(p_sid);
+        END LOOP;
+        CLOSE c_product;
+    END IF;
+EXCEPTION
+    WHEN c_error THEN
+        DBMS_OUTPUT.PUT_LINE('Error: name of category must be at least 5 characters long.');
+    WHEN no_data_found THEN 
+        DBMS_OUTPUT.PUT_LINE('No such category!');
+    WHEN others THEN 
+      dbms_output.put_line('Error!'); 
+END;
+
+
+
+
+SECOND
+For password
+DECLARE
+   u_password users.password%TYPE:= 'Abc123';
+   v_let BOOLEAN := FALSE;
+   v_num BOOLEAN := FALSE;
+   let EXCEPTION;
+   num EXCEPTION;
+BEGIN
+   FOR i IN 1..LENGTH(u_password) LOOP
+      IF REGEXP_LIKE(SUBSTR(u_password, i, 1), '[a-zA-Z]') THEN
+         v_let := TRUE;
+      ELSIF REGEXP_LIKE(SUBSTR(u_password, i, 1), '[0-9]') THEN
+         v_num := TRUE;
+      END IF;
+   END LOOP;
+   IF v_let AND v_num THEN
+      DBMS_OUTPUT.PUT_LINE('Correct');
+   ELSIF v_let THEN
+      raise let;
+   ELSIF v_num THEN
+      raise num;
+   END IF;
+EXCEPTION
+    when let then 
+      DBMS_OUTPUT.PUT_LINE('Input string contains only letters.');
+    when num then
+      DBMS_OUTPUT.PUT_LINE('Input string contains only numbers.');
+   WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('Error!' );
+END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+THIRD
+DECLARE
+    u_phone_number users.phone_number%type:= '1234567890';
+    inval_phone EXCEPTION;
+BEGIN
+    IF REGEXP_LIKE(u_phone_number, '^\d{11}$') THEN
+        DBMS_OUTPUT.PUT_LINE('Yoour Phone number is correct: ' || u_phone_number);
+    ELSE
+        raise inval_phone;
+    END IF;
+EXCEPTION
+    WHEN inval_phone THEN
+        DBMS_OUTPUT.PUT_LINE('Your phone number must consist 11 digits and only numbers');
+END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FOURTH
+DECLARE
+  u_email Users.email%type := 'john.doe@example.com'; -- replace with your email address
+  err EXCEPTION;
+BEGIN
+  IF INSTR(u_email, '@') = 0 THEN
+    RAISE err;
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Correct email address');
+  END IF;
+EXCEPTION
+  WHEN err THEN
+    DBMS_OUTPUT.PUT_LINE('Invalid email address');
+END;
+
+
+
+
+
+
+
+
+
+
+
+FIFTH
+DECLARE
+    c_cvv card.cvv%type:= '123';
+    inval_cvv EXCEPTION;
+BEGIN
+    IF REGEXP_LIKE(c_cvv, '^\d{3}$') THEN
+        DBMS_OUTPUT.PUT_LINE('Yoour CVV number is correct');
+    ELSE
+        raise inval_cvv;
+    END IF;
+EXCEPTION
+    WHEN inval_cvv THEN
+        DBMS_OUTPUT.PUT_LINE('Your cvv number must consist 3 digits');
+END;
+
+
+
+
+
+
+
+
+
+
+SIXTH
+DECLARE
+    c_crID card.crID%type:= '1';
+    c_phone_number card.phone_number%type;
+    c_balance card.balance%type;
+    zero_bal EXCEPTION;
+BEGIN
+    SELECT balance INTO c_balance
+    FROM card
+    WHERE crID = c_crID;
+
+    IF c_balance = 0 THEN
+        RAISE zero_bal;
+    ELSE
+        SELECT phone_number, balance INTO c_phone_number, c_balance
+        FROM card
+        WHERE crID = c_crID;
+        DBMS_OUTPUT.PUT_LINE(c_phone_number);
+        DBMS_OUTPUT.PUT_LINE(c_balance);
+    END IF;
+EXCEPTION
+    WHEN no_data_found THEN
+        DBMS_OUTPUT.PUT_LINE('There is no information about this card');
+        
+    WHEN zero_bal THEN
+        DBMS_OUTPUT.PUT_LINE('Your card is empty');
+END;
+
+
+
+
+
+
+SEVENTH
+
+CREATE OR REPLACE TRIGGER duplicate_check
+BEFORE INSERT OR UPDATE ON address
+FOR EACH ROW
+DECLARE
+  a_AID Address.AID%TYPE;
+  duplicate_count INTEGER;
+  dupl_error EXCEPTION;
+BEGIN
+  SELECT COUNT(*) INTO duplicate_count
+  FROM address
+  WHERE AID = a_AID;
+
+  IF duplicate_count > 0 THEN
+    RAISE dupl_error;
+  END IF;
+EXCEPTION
+  when dupl_error THEN
+    DBMS_OUTPUT.PUT_LINE('The address of such AID already exists');
+END;

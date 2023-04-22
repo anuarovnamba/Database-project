@@ -1,0 +1,90 @@
+1) if we enter product id that procedure return us other information about product
+create or replace procedure get_product(v_pid product.pid%TYPE)
+as
+v_size product.sizes%TYPE;
+v_category product.category%TYPE;
+v_price product.price%TYPE;
+begin 
+select sizes, category, price into v_size, v_category, v_price
+from product
+where pid = v_pid;
+dbms_output.put_line('Product information');
+dbms_output.put_line('size: ' || v_size);
+dbms_output.put_line('category: ' || v_category);
+dbms_output.put_line('price: ' || v_price);
+exception 
+when NO_DATA_FOUND then 
+dbms_output.put_line('Record not found');
+end;
+
+begin 
+get_product(546);
+end;
+
+
+2) declare how many users our shop have 
+create or replace function count_users
+return number 
+is 
+v_users_count number;
+begin 
+select count(*) into v_users_count
+from users;
+return v_users_count;
+end;
+
+declare 
+res number;
+begin
+res:=count_users;
+dbms_output.put_line('Count of users is ' || res);
+end;
+
+
+3) notifies you of a successful procedure
+create or replace procedure update_price(
+    pr_id in number,
+    new_price in number
+)
+is 
+begin 
+update product set price = new_price 
+where pid = pr_id;
+if SQL%ROWCOUNT = 0 then 
+RAISE_APPLICATION_ERROR(-20002, 'Product not found');
+else 
+dbms_output.put_line('Price updated successfully');
+end if;
+exception
+when others then
+dbms_output.put_line('Error: ' || SQLERRM);
+end;
+
+begin 
+update_price(10, 25990);
+end;
+
+4)return us average price of current category
+create or replace function avg_price(category varchar2) return number
+is 
+total number := 0; 
+product_count number := 0;
+begin 
+for prod in (select price from product where category = category)
+loop total := total + prod.price;
+product_count := product_count + 1;
+end loop;
+
+if product_count = 0 then 
+return 0;
+else 
+return total / product_count;
+end if;
+end;
+
+declare 
+res number;
+begin 
+res := avg_price('Skirt');
+dbms_output.put_line('Average price of skirts is: ' || res);
+end;
