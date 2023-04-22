@@ -1,0 +1,294 @@
+(1)create table Users (
+	phone_number VARCHAR(50) primary key,
+	name VARCHAR(50),
+	surname VARCHAR(50),
+	email VARCHAR(50),
+	password VARCHAR(50),
+	registrationDate DATE,
+	status VARCHAR(7)
+);
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('9803372694', 'Cicely', 'Carbonell', 'ccarbonell0@apache.org', '6dnKZ3zT3', '10/14/2021', 'buyer');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('4668252897', 'Rhett', 'Mc Gorley', 'rmcgorley1@google.es', 'IyK4nWMYdbg', '10/26/2021', 'courier');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('1137177958', 'Cheslie', 'Cockrell', 'ccockrell2@free.fr', 'CZfXSOV7', '6/13/2021', 'buyer');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('3788091415', 'Taddeo', 'Squibbes', 'tsquibbes3@geocities.jp', '3XStbFhM3', '12/27/2021', 'courier');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('6967008136', 'Mandy', 'Goning', 'mgoning4@forbes.com', 'NAwR31jc5Z', '2/21/2021', 'courier');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('8314703937', 'Katherina', 'Beckinsale', 'kbeckinsale5@businesswire.com', 'FaEASy', '9/14/2021', 'courier');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('5131324134', 'Yetty', 'Quakley', 'yquakley6@bigcartel.com', 'QJEJmR03pNg', '10/14/2021', 'seller');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('9769737264', 'Hunt', 'Searight', 'hsearight7@mozilla.org', 'lmE1T25', '12/23/2021', 'buyer');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('6937115268', 'May', 'Deerr', 'mdeerr8@google.it', 'MRr5r7w', '8/3/2021', 'courier');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('2242417582', 'Helsa', 'Shead', 'hshead9@is.gd', '3G6Pqn', '1/7/2021', 'seller');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('5473502697', 'Mohandas', 'Sellor', 'msellora@w3.org', 'tURZnUOFi', '10/20/2021', 'seller');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('4824451730', 'Lodovico', 'Meindl', 'lmeindlb@nps.gov', '0hv8HP4pffic', '8/24/2021', 'buyer');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('2854423003', 'Guthrie', 'Fountaine', 'gfountainec@berkeley.edu', '695yqgGzq', '4/21/2021', 'buyer');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('3042801526', 'Diann', 'Ashard', 'dashardd@posterous.com', 'XoJFC64uX5', '4/17/2021', 'buyer');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('9323166198', 'Gwenette', 'Bullen', 'gbullene@yellowbook.com', 'Bs8B4LUm', '2/20/2021', 'courier');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('5243172667', 'Darby', 'Duckfield', 'dduckfieldf@indiegogo.com', 'xVW6yC', '7/8/2021', 'courier');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('5791199395', 'Kiersten', 'Calvey', 'kcalveyg@google.com.hk', 'bSfoVjWgeD', '8/13/2021', 'courier');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('4751747133', 'Russ', 'Shevlan', 'rshevlanh@devhub.com', 'GYNWdu74l2C', '1/21/2021', 'seller');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('1724877818', 'Myles', 'McIlmurray', 'mmcilmurrayi@networksolutions.com', 'L9f5bY', '4/26/2021', 'seller');
+insert into Users (phone_number, name, surname, email, password, registrationDate, status) values ('9008040521', 'Sheffy', 'Milliken', 'smillikenj@ibm.com', 'dCLmL2N9q9v2', '6/8/2021', 'seller');
+
+
+(2)create table Seller (
+	sid INT primary key,
+	rating DECIMAL(2,1)
+);
+insert into Seller (sid, rating) values (1, 2.1);
+insert into Seller (sid, rating) values (2, 4.3);
+insert into Seller (sid, rating) values (3, 2.4);
+insert into Seller (sid, rating) values (4, 1.4);
+insert into Seller (sid, rating) values (5, 4.9);
+insert into Seller (sid, rating) values (6, 3.5);
+insert into Seller (sid, rating) values (7, 2.5);
+insert into Seller (sid, rating) values (8, 4.1);
+insert into Seller (sid, rating) values (9, 4.8);
+insert into Seller (sid, rating) values (10, 1.2);
+insert into Seller (sid, rating) values (11, 4.4);
+insert into Seller (sid, rating) values (12, 4.9);
+insert into Seller (sid, rating) values (13, 3.7);
+insert into Seller (sid, rating) values (14, 1.5);
+insert into Seller (sid, rating) values (15, 2.0);
+insert into Seller (sid, rating) values (16, 1.7);
+insert into Seller (sid, rating) values (17, 3.2);
+insert into Seller (sid, rating) values (18, 5.0);
+insert into Seller (sid, rating) values (19, 4.0);
+insert into Seller (sid, rating) values (20, 2.1);
+
+
+
+(3)create table Product (
+	pid INT primary key,
+	sizes VARCHAR(50),
+	category VARCHAR(6),
+	price INT, 
+    sid int,
+    FOREIGN KEY(sid) REFERENCES Seller(sid)
+);
+insert into Product (pid, sizes, category, price) values (1, 'XS', 'Jacket', 14632);
+insert into Product (pid, sizes, category, price) values (2, 'M', 'Skirt', 24237);
+insert into Product (pid, sizes, category, price) values (3, 'L', 'Shirt', 23652);
+insert into Product (pid, sizes, category, price) values (4, 'L', 'Shorts', 5327);
+insert into Product (pid, sizes, category, price) values (5, 'S', 'Skirt', 17714);
+insert into Product (pid, sizes, category, price) values (6, 'XS', 'Shorts', 13557);
+insert into Product (pid, sizes, category, price) values (7, '2XL', 'Shirt', 37192);
+insert into Product (pid, sizes, category, price) values (8, 'M', 'Skirt', 17519);
+insert into Product (pid, sizes, category, price) values (9, 'L', 'Skirt', 9346);
+insert into Product (pid, sizes, category, price) values (10, '2XL', 'Shirt', 32797);
+insert into Product (pid, sizes, category, price) values (11, 'L', 'Skirt', 21598);
+insert into Product (pid, sizes, category, price) values (12, 'L', 'Jacket', 23933);
+insert into Product (pid, sizes, category, price) values (13, 'M', 'Shorts', 36988);
+insert into Product (pid, sizes, category, price) values (14, 'M', 'Shorts', 35030);
+insert into Product (pid, sizes, category, price) values (15, 'XS', 'Shirt', 21901);
+insert into Product (pid, sizes, category, price) values (16, 'XL', 'Dress', 6407);
+insert into Product (pid, sizes, category, price) values (17, 'S', 'Shirt', 16514);
+insert into Product (pid, sizes, category, price) values (18, 'L', 'Jacket', 20062);
+insert into Product (pid, sizes, category, price) values (19, 'M', 'Shorts', 8189);
+insert into Product (pid, sizes, category, price) values (20, 'L', 'Skirt', 34377);
+
+(4)create table Courier (
+	cid INT primary key,
+	rating INT
+);
+insert into Courier (cid, rating) values (1, 3);
+insert into Courier (cid, rating) values (2, 3);
+insert into Courier (cid, rating) values (3, 5);
+insert into Courier (cid, rating) values (4, 3);
+insert into Courier (cid, rating) values (5, 1);
+insert into Courier (cid, rating) values (6, 2);
+insert into Courier (cid, rating) values (7, 4);
+insert into Courier (cid, rating) values (8, 1);
+insert into Courier (cid, rating) values (9, 5);
+insert into Courier (cid, rating) values (10, 3);
+insert into Courier (cid, rating) values (11, 3);
+insert into Courier (cid, rating) values (12, 5);
+insert into Courier (cid, rating) values (13, 2);
+insert into Courier (cid, rating) values (14, 2);
+insert into Courier (cid, rating) values (15, 1);
+insert into Courier (cid, rating) values (16, 2);
+insert into Courier (cid, rating) values (17, 2);
+insert into Courier (cid, rating) values (18, 5);
+insert into Courier (cid, rating) values (19, 2);
+insert into Courier (cid, rating) values (20, 2);
+
+
+
+(5)create table Card (
+	crid INT primary key,
+	CVV int,
+	balance INT,
+	phone_number VARCHAR(50),
+    foreign key (phone_number) references users(phone_number)
+);
+insert into Card (crid, CVV, balance, phone_number) values (1, 248, 190490, '9803372694');
+insert into Card (crid, CVV, balance, phone_number) values (2, 607, 115628, '4668252897');
+insert into Card (crid, CVV, balance, phone_number) values (3, 841, 50201, '1137177958');
+insert into Card (crid, CVV, balance, phone_number) values (4, 730, 26918, '3788091415');
+insert into Card (crid, CVV, balance, phone_number) values (5, 398, 99249, '6967008136');
+insert into Card (crid, CVV, balance, phone_number) values (6, 417, 142855, '8314703937');
+insert into Card (crid, CVV, balance, phone_number) values (7, 882, 15239, '5131324134');
+insert into Card (crid, CVV, balance, phone_number) values (8, 557, 160973, '9769737264');
+insert into Card (crid, CVV, balance, phone_number) values (9, 881, 112611, '6937115268');
+insert into Card (crid, CVV, balance, phone_number) values (10, 338, 94906, '2242417582');
+insert into Card (crid, CVV, balance, phone_number) values (11, 573, 136041,'5473502697');
+insert into Card (crid, CVV, balance, phone_number) values (12, 219, 153551,'4824451730');
+insert into Card (crid, CVV, balance, phone_number) values (13, 534, 105522,'2854423003');
+insert into Card (crid, CVV, balance, phone_number) values (14, 985, 65114, '3042801526');
+insert into Card (crid, CVV, balance, phone_number) values (15, 414, 9589, '9323166198');
+insert into Card (crid, CVV, balance, phone_number) values (16, 651, 106413,'5243172667');
+insert into Card (crid, CVV, balance, phone_number) values (17, 634, 95952, '5791199395');
+insert into Card (crid, CVV, balance, phone_number) values (18, 154, 74500, '4751747133');
+insert into Card (crid, CVV, balance, phone_number) values (19, 250, 88154, '1724877818');
+insert into Card (crid, CVV, balance, phone_number) values (20, 907, 92668, '9008040521');
+
+
+(6)create table Buyer (
+	bid INT primary key,
+    phone_number varchar(50),
+    foreign key(phone_number) references users
+);
+insert into Buyer (bid, phone_number) values (4, '3788091415');
+insert into Buyer (bid, phone_number) values (5, '6967008136');
+insert into Buyer (bid, phone_number) values (6, '8314703937');
+insert into Buyer (bid, phone_number) values (7, '5131324134');
+insert into Buyer (bid, phone_number) values (8, '9769737264');
+insert into Buyer (bid, phone_number) values (9, '6937115268');
+insert into Buyer (bid, phone_number) values (10, '2242417582');
+insert into Buyer (bid, phone_number) values (11, '5473502697');
+insert into Buyer (bid, phone_number) values (12, '4824451730');
+insert into Buyer (bid, phone_number) values (13, '2854423003');
+insert into Buyer (bid, phone_number) values (14, '3042801526');
+insert into Buyer (bid, phone_number) values (15, '9323166198');
+insert into Buyer (bid, phone_number) values (16, '5243172667');
+insert into Buyer (bid, phone_number) values (17, '5791199395');
+insert into Buyer (bid, phone_number) values (18, '4751747133');
+insert into Buyer (bid, phone_number) values (19, '1724877818');
+insert into Buyer (bid, phone_number) values (20, '9008040521');
+
+
+(7)create table Shopping_cart (
+	ShID INT primary key,
+	pid INT,
+	bid INT,
+	quantity INT, 
+    FOREIGN KEY (pid) REFERENCES  product(pid), 
+    FOREIGN KEY (bid) REFERENCES  buyer(bid)
+);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (1, 1, 1, 1);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (2, 2, 2, 4);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (3, 3, 3, 4);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (4, 4, 4, 8);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (5, 5, 5, 5);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (6, 6, 6, 8);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (7, 7, 7, 3);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (8, 8, 8, 4);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (9, 9, 9, 5);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (10, 10, 10, 1);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (11, 11, 11, 8);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (12, 12, 12, 7);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (13, 13, 13, 1);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (14, 14, 14, 5);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (15, 15, 15, 3);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (16, 16, 16, 1);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (17, 17, 17, 3);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (18, 18, 18, 7);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (19, 19, 19, 10);
+insert into Shopping_cart (ShID, pid, bid, quantity) values (20, 20, 20, 9);
+
+
+(8)create table Address (
+	aid INT primary key,
+	phone_number VARCHAR(50),
+	city VARCHAR(50),
+	street VARCHAR(50),
+	house DECIMAL(2,1),
+	entrance INT,
+	apartment INT,
+    foreign key(phone_number)  references users(phone_number)
+);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (1, '9803372694', 'Medellin', 'Nelson', 2.0, 3, 52);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (2, '4668252897', 'Magdug', 'Elka', 3.7, 2, 34);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (3, '1137177958', 'Verkhniye Achaluki', 'Gateway', 1.6, 2, 47);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (4, '3788091415', 'Illela', 'Spohn', 1.3, 1, 15);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (5, '6967008136', 'Portobelo', 'Arizona', 1.6, 3, 4);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (6, '8314703937', 'Quán Hàu', 'Maywood', 2.3, 3, 51);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (7, '5131324134', 'Segezha', 'Hayes', 3.0, 3, 47);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (8, '9769737264', 'Banjar Batuaji Kaja', 'Fulton', 3.6, 1, 37);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (9, '6937115268', 'Sierpc', 'Lillian', 3.7, 2, 5);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (10,'2242417582', 'Gamawa', 'Division', 1.4, 3, 36);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (11,'5473502697', 'Birzai', 'Twin Pines', 2.3, 1, 56);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (12,'4824451730', 'Lucaya', 'Forster', 3.1, 2, 51);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (13,'2854423003', 'Garland', 'Debs', 3.7, 1, 50);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (14,'3042801526', 'Cicheng', 'Harper', 1.6, 2, 40);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (15,'9323166198', 'Concepción Tutuapa', 'Bay', 2.8, 2, 47);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (16,'5243172667', 'Pélla', 'Sachs', 2.5, 1, 48);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (17,'5791199395', 'Verkhnyaya Khava', 'Melby', 3.5, 1, 6);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (18,'4751747133', 'Puyehue', 'Del Mar', 1.2, 2, 24);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (19,'1724877818', 'Essang', 'Mayfield', 2.7, 2, 30);
+insert into Address (aid, phone_number, city, street, house, entrance, apartment) values (20,'9008040521', 'Vologda', 'Hoffman', 2.0, 1, 29);
+
+
+(9) create table Transaction (
+	tid INT primary key,
+	shid INT,
+	sid INT,
+	aid INT,
+	crid INT,
+	cid INT,
+	startTime DATE,
+	endTime DATE,
+	status VARCHAR(8),
+    foreign key(shid) REFERENCES shopping_cart(shid),
+    foreign key(sid) REFERENCES seller(sid),
+    foreign key(aid) REFERENCES address(aid),
+    foreign key(crid) REFERENCES card(crid),
+    foreign key(cid) REFERENCES courier(cid)
+);
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (1, 1, 1, 1, 1, 1, '3/27/2023', '4/01/2023', 'Approved');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (2, 2, 2, 2, 2, 2, '1/9/2021', null, 'Pending');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (3, 3, 3, 3, 3, 3, '12/2/2023', null, 'Pending');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (4, 4, 4, 4, 4, 4, '10/26/2022', '11/11/2022', 'Approved');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (5, 5, 5, 5, 5, 5, '10/16/2021', null, 'Pending');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (6, 6, 6, 6, 6, 6, '12/4/2022', '12/12/2022', 'Approved');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (7, 7, 7, 7, 7, 7, '2/31/2023', '2/7/2023', 'Approved');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (8, 8, 8, 8, 8, 8, '6/21/2022', '6/22/2022', 'Approved');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (9, 9, 9, 9, 9, 9, '11/20/2022', '11/23/2022', 'Approved');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (10, 10, 10, 10, 10, 10, '10/6/2022', '10/14/2022', 'Approved');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (11, 11, 11, 11, 11, 11, '10/14/2022', '10/29/2022', 'Declined');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (12, 12, 12, 12, 12, 12, '6/10/2022', '6/27/2022', 'Declined');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (13, 13, 13, 13, 13, 13, '4/1/2023', '4/17/2023', 'Declined');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (14, 14, 14, 14, 14, 14, '3/2/2023', '3/17/2023', 'Declined');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (15, 15, 15, 15, 15, 15, '1/10/2023', '1/11/2023', 'Approved');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (16, 16, 16, 16, 16, 16, '3/15/2023', '4/6/2023', 'Declined');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (17, 17, 17, 17, 17, 17, '2/11/2023', '2/29/2023', 'Declined');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (18, 18, 18, 18, 18, 18, '1/11/2021', null, 'Pending');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (19, 19, 19, 19, 19, 19, '7/5/2022', '7/9/2022', 'Approved');
+insert into Transaction (tid, shid, sid, aid, crid, cid, startTime, endTime, status) values (20, 20, 20, 20, 20, 20, '8/23/2022', '9/10/2022', 'Declined');
+
+
+(10) create table Log (
+	phone_number VARCHAR(50),
+	date_ DATE,
+	info VARCHAR(12)
+);
+insert into Log phone_number, date_, info) values ('9803372694', '3/27/2021', 'transaction');
+insert into Log (phone_number, date_, info) values ('4668252897', '10/26/2021', 'registration');
+insert into Log (phone_number, date_, info) values ('1137177958', '12/2/2021', 'transaction');
+insert into Log (phone_number, date_, info) values ('3788091415', '12/27/2021', 'registration');
+insert into Log (phone_number, date_, info) values ('6967008136', '2/21/2021', 'registration');
+insert into Log (phone_number, date_, info) values ('8314703937', '9/14/2021', 'registration');
+insert into Log (phone_number, date_, info) values ('5131324134', '10/14/2021', 'registration');
+insert into Log (phone_number, date_, info) values ('9769737264', '6/21/2021', 'transaction');
+insert into Log (phone_number, date_, info) values ('6937115268', '8/3/2022', 'registration');
+insert into Log (phone_number, date_, info) values ('2242417582', '10/6/2021', 'transaction');
+insert into Log (phone_number, date_, info) values ('5473502697', '10/20/2021', 'registration');
+insert into Log (phone_number, date_, info) values ('4824451730', '8/24/2021', 'registration');
+insert into Log (phone_number, date_, info) values ('2854423003', '4/21/2021', 'registration');
+insert into Log (phone_number, date_, info) values ('3042801526', '7/2/2021', 'transaction');
+insert into Log (phone_number, date_, info) values ('9323166198', '2/20/2021', 'registration');
+insert into Log (phone_number, date_, info) values ('5243172667', '11/5/2021', 'transaction');
+insert into Log (phone_number, date_, info) values ('5791199395', '2/11/2021', 'transaction');
+insert into Log (phone_number, date_, info) values ('4751747133', '1/21/2021', 'registration');
+insert into Log (phone_number, date_, info) values ('1724877818', '4/26/2021', 'registration');
+insert into Log (phone_number, date_, info) values ('9008040521', '8/23/2021', 'transaction');
+
+
