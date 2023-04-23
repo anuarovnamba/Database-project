@@ -74,7 +74,6 @@ for prod in (select price from product where category = category)
 loop total := total + prod.price;
 product_count := product_count + 1;
 end loop;
-
 if product_count = 0 then 
 return 0;
 else 
@@ -87,4 +86,26 @@ res number;
 begin 
 res := avg_price('Skirt');
 dbms_output.put_line('Average price of skirts is: ' || res);
+end;
+
+5)return average price of product category 
+create or replace procedure my_procedure is 
+cursor my_cursor is
+select category, AVG(price) as avg_price 
+from product
+group by category; 
+v_category product.category%TYPE; 
+v_avg_price product.price%TYPE;
+begin 
+open my_cursor;
+loop 
+fetch my_cursor into v_category, v_avg_price;
+exit when my_cursor%NOTFOUND;
+dbms_output.put_line(v_category || ': ' || v_avg_price);
+end loop; 
+close my_cursor;
+end;
+
+begin 
+my_procedure;
 end;
