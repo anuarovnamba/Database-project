@@ -1,0 +1,39 @@
+DECLARE
+    r_tid Transaction.tid%TYPE := 1; 
+    r_crid Card.crid%TYPE; 
+    r_price product.price%TYPE; 
+BEGIN
+    SELECT cid INTO r_crid
+    FROM courier
+    WHERE rating >= 4.0
+    AND cid NOT IN (
+        SELECT cid
+        FROM Transaction
+        WHERE status = 'Courier'
+        AND endTime BETWEEN SYSDATE - 14 AND SYSDATE
+    )
+    AND ROWNUM = 1;
+    SELECT price INTO r_price
+    FROM product
+    WHERE pid = r_tid;
+    
+    UPDATE Transaction
+    SET status = 'Approved',
+        endTime = SYSDATE
+    WHERE tid = r_tid;
+    
+    UPDATE Card
+    SET balance = balance + r_amount
+    WHERE crid = r_crid;
+    
+    COMMIT;
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        RAISE_APPLICATION_ERROR(-20001, 'No courier available to deliver the transaction');
+    WHEN OTHERS THEN
+        ROLLBACK;
+        RAISE;
+END;
+--This transaction first selects an available courier with a rating of at least 4.0 who hasn't delivered a transaction in the past 7 days. It then retrieves the amount of the transaction with the given transaction ID and updates the status of the transaction to "Delivered" with the current date and time. Finally, it adds the transaction amount to the balance of the courier's card.
+
+--If there are no available couriers or if any errors occur during the transaction, it will raise an appropriate exception and rollback the changes.

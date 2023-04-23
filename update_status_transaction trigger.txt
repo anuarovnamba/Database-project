@@ -1,0 +1,18 @@
+CREATE OR REPLACE TRIGGER status_upgrade
+AFTER UPDATE ON transaction
+FOR EACH ROW
+DECLARE
+    date_dif NUMBER;
+BEGIN
+    date_dif := 14;
+    IF :new.endtime - :new.startTime >= date_dif THEN
+        :new.status := 'Declined';
+    ELSIF :new.endtime - :new.startTime < date_dif THEN
+        :new.status := 'Approved';   
+    ELSE 
+        :new.status := 'Pending';
+    END IF;
+END;
+
+-- Update
+UPDATE transaction SET endtime = SYSDATE WHERE tid = 1;

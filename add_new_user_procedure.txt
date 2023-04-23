@@ -1,0 +1,39 @@
+CREATE OR REPLACE PROCEDURE addUser(
+    new_phone_number  users.phone_number%TYPE,
+    new_name  users.name%TYPE,
+    new_surname  users.surname%TYPE,
+    new_email  users.email%TYPE,
+    new_password  users.password%TYPE,
+    new_date  users.registrationDate%TYPE,
+    new_status  users.status%TYPE
+)
+AS
+    new_bid buyer.bid%TYPE;
+    new_sid seller.sid%TYPE;
+    new_cid courier.cid%TYPE;
+BEGIN
+
+    INSERT INTO users (phone_number, name, surname, email, password, registrationDate, status)
+    VALUES (new_phone_number, new_name, new_surname, new_email, new_password, new_date, new_status);
+    
+    IF new_status = 'buyer' THEN
+        SELECT MAX(bid) + 1 INTO new_bid FROM buyer;
+        INSERT INTO buyer (bid, phone_number) VALUES (new_bid, new_phone_number);
+    ELSIF new_status = 'seller' THEN
+        SELECT MAX(sid) + 1 INTO new_sid FROM seller;
+        INSERT INTO seller (sid, rating) VALUES (new_sid, 0);
+    ELSIF new_status = 'courier' THEN
+        SELECT MAX(cid) + 1 INTO new_cid FROM courier;
+        INSERT INTO courier (cid, rating) VALUES (new_cid, 0);
+    ELSE
+        RAISE_APPLICATION_ERROR(-20001, 'Invalid status: ' || new_status);
+    END IF;
+END;
+
+
+--run procedure
+BEGIN
+    addUser('1803372690', 'John', 'Doe', 'johndoe@example.com', 'password', '04/22/2021',  'byer');
+END;
+/
+
