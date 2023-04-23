@@ -1,0 +1,98 @@
+FDs
+Table User
+Key: phone_number
+phone_number -> password, email, name, surname, status, registration_date
+
+1NF: Each user will register with a phone number and this will be the primary key. And each user can have only one password, email, name, surname, status, registration_date. 2NF: All nonkey attributes are functionally dependent on the entire phone_number, so that's 2NF.
+3NF: In the existing FD, the left hand side is the key, so it's 3NF.
+
+
+
+Table Seller
+Key: SID
+Foreign Key: phone_number
+phone_number -> SID, rating
+SID -> phone_number, rating 
+
+1NF: Each seller can have only one phone_number, SID, rating.
+2NF: Nonkey attribute rating is functionally dependent on the entire SID or phone_number.
+3NF: In the existing FDs, the left hand side is the key or its right hand side is a key.
+
+
+
+Table Buyer
+Key: BID
+Foreign Key: phone_number
+phone_number -> BID
+BID -> phone_number
+
+1NF: Each buyer can have only one phone_number, BID
+2NF: in 1NF and does not have nonkey attributes.
+3NF: In the existing FDs, the left hand side is the key or its right hand side is a key.
+
+
+
+Table Courier
+Key: CID
+Foreign Key: phone_number
+phone_number -> CID, rating
+CID -> phone_number, rating 
+
+1NF: Each courier can have only one phone_number, CID, rating.
+2NF: Nonkey attribute rating is functionally dependent on the entire CID or phone_number.
+3NF: In the existing FDs, the left hand side is the key or its right hand side is a key.
+
+
+
+Table Card
+Key: crID
+crID -> CVV, balance, phone_number
+
+1NF: Each card can have only one CVV, balance, phone_number
+2NF: Nonkey attributes are functionally dependent on the entire crID.
+3NF: In the existing FD, the left hand side is the key.
+
+
+
+
+Table Address
+Key: AID
+AID -> phone_number, city, street, house, entrance, apartment
+  
+1NF: Each address ID can have only one phone_number, city, street, house, entrance, apartment.
+2NF: Nonkey attributes are functionally dependent on the entire AID.
+3NF: In the existing FD, the left hand side is the key.
+
+
+
+Table Product
+Key: PID
+Foreign Key: SID
+PID -> size, category, price, SID
+
+1NF: Each address product can have only one category, price, SID.
+2NF: Nonkey attributes are functionally dependent on the entire PID.
+3NF: In the existing FD, the left hand side is the key.
+
+
+
+Table Shopping_cart
+Key: ShID
+ShID -> PID, BID, quantity
+
+1NF: Each shopping cart can have only one product ID, buyer and quantity.
+2NF: Nonkey attributes are functionally dependent on the entire ShID.
+3NF: In the existing FD, the left hand side is the key.
+
+
+
+Table Transaction
+Key: TID
+TID -> SID, status, ShID, CID, AID, start_time, end_time, crID
+
+1NF: Each transaction can have only one SID, status, ShID, CID, AID, start_time, end_time, crID.
+2NF: Nonkey attributes are functionally dependent on the entire TID.
+3NF: In the existing FD, the left hand side is the key.
+
+
+
