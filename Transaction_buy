@@ -1,0 +1,81 @@
+DECLARE
+  v_shid Shopping_cart.ShID%TYPE := 1;  
+  v_pid Product.pid%TYPE;  
+  v_sid Seller.sid%TYPE;  
+  v_bid Buyer.bid%TYPE;  
+  v_crid Card.crid%TYPE;  
+  v_cid Courier.cid%TYPE;  
+  v_price Product.price%TYPE;  
+  v_balance Card.balance%TYPE;  
+  v_quantity Shopping_cart.quantity%TYPE;  
+  v_total_price NUMBER;  
+BEGIN
+   
+SELECT pid, bid, quantity INTO v_pid, v_bid, v_quantity
+FROM Shopping_cart
+WHERE ShID = v_shid;
+  
+ 
+SELECT sid INTO v_sid
+FROM Product
+WHERE pid = v_pid;
+  
+  
+SELECT crid, balance INTO v_crid, v_balance
+FROM Card
+WHERE phone_number = (
+    SELECT phone_number FROM Users 
+    WHERE phone_number = (
+        SELECT phone_number FROM Buyer 
+        WHERE bid = v_bid));
+  
+   
+SELECT price INTO v_price
+FROM Product
+WHERE pid = v_pid;
+  
+v_total_price := v_price * v_quantity;
+
+BEGIN
+    
+UPDATE Card
+SET balance = v_balance - v_total_price
+WHERE crid = v_crid;
+    
+    
+UPDATE Card
+SET balance = balance + v_total_price
+WHERE phone_number = (
+    SELECT phone_number FROM Users 
+    WHERE phone_number = (
+        SELECT phone_number FROM Seller 
+        WHERE sid = v_sid));
+    
+    
+UPDATE Transaction
+SET status = 'Completed', endTime = SYSDATE
+WHERE shid = v_shid;
+    
+
+INSERT INTO Log (phone_number, date_, info)
+VALUES ((
+    SELECT phone_number FROM Users 
+    WHERE phone_number = (
+        SELECT phone_number FROM Buyer 
+        WHERE bid = v_bid)), SYSDATE, 'transaction');
+    
+    
+COMMIT;
+    
+     
+DBMS_OUTPUT.PUT_LINE('Products have been successfully purchased: ' || v_quantity || ' product unit with ID ' || v_pid || 'for the amount of ' || v_total_price || ' tenge.');
+
+EXCEPTION
+    
+    WHEN OTHERS THEN
+       
+      ROLLBACK;
+   
+      DBMS_OUTPUT.PUT_LINE('Transaction execution error: ' || SQLERRM);
+  END;
+END;
