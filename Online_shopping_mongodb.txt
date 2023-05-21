@@ -1,0 +1,558 @@
+use online_shop
+db.createCollection("Users")
+
+db.Users.insertMany([
+  {
+    _id: 1,	
+    phone_number: '9803372694',
+    name: 'Cicely',
+    surname: 'Carbonell',
+    email: 'ccarbonell0@apache.org',
+    password: '6dnKZ3zT3',
+    registrationDate: ISODate('2021-10-14'),
+    status: 'buyer'
+  },
+  {
+    _id: 2,	
+    phone_number: '4668252897',
+    name: 'Rhett',
+    surname: 'Mc Gorley',
+    email: 'rmcgorley1@google.es',
+    password: 'IyK4nWMYdbg',
+    registrationDate: ISODate('2021-10-26'),
+    status: 'courier'
+  },
+  {
+    _id: 3,	
+    phone_number: '1137177958',
+    name: 'Cheslie',
+    surname: 'Cockrell',
+    email: 'ccockrell2@free.fr',
+    password: 'CZfXSOV7',
+    registrationDate: ISODate('2021-06-13'),
+    status: 'buyer'
+  },
+  {
+    _id: 4,	
+    phone_number: '3788091415',
+    name: 'Taddeo',
+    surname: 'Squibbes',
+    email: 'tsquibbes3@geocities.jp',
+    password: '3XStbFhM3',
+    registrationDate: ISODate('2021-12-27'),
+    status: 'courier'
+  },
+  {
+    _id: 5,
+    phone_number: '6967008136',
+    name: 'Mandy',
+    surname: 'Goning',
+    email: 'mgoning4@forbes.com',
+    password: 'NAwR31jc5Z',
+    registrationDate: ISODate('2021-02-21'),
+    status: 'courier'
+  },
+  {
+    _id: 6,
+    phone_number: '8314703937',
+    name: 'Katherina',
+    surname: 'Beckinsale',
+    email: 'kbeckinsale5@businesswire.com',
+    password: 'FaEASy',
+    registrationDate: ISODate('2021-09-14'),
+    status: 'courier'
+  },
+  {
+    _id: 7,
+    phone_number: '5131324134',
+    name: 'Yetty',
+    surname: 'Quakley',
+    email: 'yquakley6@bigcartel.com',
+    password: 'QJEJmR03pNg',
+    registrationDate: ISODate('2021-10-14'),
+    status: 'seller'
+  },
+  {
+    _id: 8,	 
+    phone_number: '9769737264',
+    name: 'Hunt',
+    surname: 'Searight',
+    email: 'hsearight7@mozilla.org',
+    password: 'lmE1T25',
+    registrationDate: ISODate('2021-12-23'),
+    status: 'buyer'
+  },
+  {
+    _id: 9,	
+    phone_number: '6937115268',
+    name: 'May',
+    surname: 'Deerr',
+    email: 'mdeerr8@google.it',
+    password: 'MRr5r7w',
+    registrationDate: ISODate('2021-08-03'),
+    status: 'courier'
+  },
+  {
+    _id: 10,
+    phone_number: '2242417582',
+    name: 'Helsa',
+    surname: 'Shead',
+    email: 'hshead9@is.gd',
+    password: '3G6Pqn',
+    registrationDate: ISODate('2021-01-07'),
+    status: 'seller'
+  },
+  {
+    _id: 11,
+    phone_number: '5473502697',
+    name: 'Mohandas',
+    surname: 'Sellor',
+    email: 'msellora@w3.org',
+    password: 'tURZnUOFi',
+    registrationDate: ISODate('2021-10-20'),
+    status: 'seller'
+  },
+  {
+    _id: 12,
+    phone_number: '4824451730',
+    name: 'Lodovico',
+    surname: 'Meindl',
+    email: 'lmeindlb@nps.gov',
+    password: '0hv8HP4pffic',
+    registrationDate: ISODate('2021-08-24'),
+    status: 'buyer'
+  },
+  {
+    _id: 13,
+    phone_number: '2854423003',
+    name: 'Guthrie',
+    surname: 'Fountaine',
+    email: 'gfountainec@berkeley.edu',
+    password: '695yqgGzq',
+    registrationDate: ISODate('2021-04-21'),
+    status: 'buyer'
+  },
+  {
+    _id: 14,
+    phone_number: '3042801526',
+    name: 'Diann',
+    surname: 'Ashard',
+    email: 'dashardd@posterous.com',
+    password: 'XoJFC64uX5',
+    registrationDate: ISODate('2021-04-17'),
+    status: 'buyer'
+  },
+  {
+    _id: 15,	
+    phone_number: '9323166198',
+    name: 'Gwenette',
+    surname: 'Bullen',
+    email: 'gbullene@yellowbook.com',
+    password: 'Bs8B4LUm',
+    registrationDate: ISODate('2021-02-20'),
+    status: 'courier'
+  },
+  {
+    _id: 16,
+    phone_number: '5243172667',
+    name: 'Darby',
+    surname: 'Duckfield',
+    email: 'dduckfieldf@indiegogo.com',
+    password: 'xVW6yC',
+    registrationDate: ISODate('2021-07-08'),
+    status: 'courier'
+  },
+  {
+    _id: 17,
+    phone_number: '5791199395',
+    name: 'Kiersten',
+    surname: 'Calvey',
+    email: 'kcalveyg@google.com.hk',
+    password: 'bSfoVjWgeD',
+    registrationDate: ISODate('2021-08-13'),
+    status: 'courier'
+  },
+  {
+    _id: 18,
+    phone_number: '4751747133',
+    name: 'Russ',
+    surname: 'Shevlan',
+    email: 'rshevlanh@devhub.com',
+    password: 'GYNWdu74l2C',
+    registrationDate: ISODate('2021-01-21'),
+    status: 'seller'
+  },
+  {
+    _id: 19,
+    phone_number: '1724877818',
+    name: 'Myles',
+    surname: 'McIlmurray',
+    email: 'mmcilmurrayi@networksolutions.com',
+    password:'L9f5bY',
+    registrationDate: ISODate('2021-04-26'),
+    status: 'seller'
+  },
+  {
+    _id: 20,
+    phone_number: '9008040521',
+    name: 'Sheffy',
+    surname: 'Milliken',
+    email: 'smillikenj@ibm.com',
+    password: 'dCLmL2N9q9v2',
+    registrationDate: ISODate('2021-06-08'),
+    status: 'seller'
+  }
+])
+
+<
+  acknowledged: true,
+  insertedIds: {
+    '0': 1,
+    '1': 2,
+    '2': 3,
+    '3': 4,
+    '4': 5,
+    '5': 6,
+    '6': 7,
+    '7': 8,
+    '8': 9,
+    '9': 10,
+    '10': 11,
+    '11': 12,
+    '12': 13,
+    '13': 14,
+    '14': 15,
+    '15': 16,
+    '16': 17,
+    '17': 18,
+    '18': 19,
+    '19': 20
+  }
+}
+
+db.createCollection("Seller")
+
+db.Seller.insertMany([
+  { _id: 7, phone_number: '5131324134', rating: 2.1 },
+  { _id: 10, phone_number: '2242417582', rating: 4.3 },
+  { _id: 11, phone_number: '5473502697', rating: 2.4 },
+  { _id: 18, phone_number: '4751747133', rating: 1.4 },
+  { _id: 19, phone_number: '1724877818', rating: 4.9 },
+  { _id: 20, phone_number: '9008040521', rating: 3.5 }
+]);
+
+<{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("646665331f81fd655cce3b3d"),
+    '1': ObjectId("646665331f81fd655cce3b3e"),
+    '2': ObjectId("646665331f81fd655cce3b3f"),
+    '3': ObjectId("646665331f81fd655cce3b40"),
+    '4': ObjectId("646665331f81fd655cce3b41"),
+    '5': ObjectId("646665331f81fd655cce3b42")
+  }
+}
+
+db.createCollection("Courier")
+db.Courier.insertMany([
+  { _id: 2, phone_number: '4668252897', rating: 3 },
+  { _id: 4, phone_number: '3788091415', rating: 3 },
+  { _id: 5, phone_number: '6967008136', rating: 5 },
+  { _id: 6, phone_number: '8314703937', rating: 3 },
+  { _id: 9, phone_number: '6937115268', rating: 1 },
+  { _id: 15, phone_number: '9323166198', rating: 2 },
+  { _id: 16, phone_number: '5243172667', rating: 4 },
+  { _id: 17, phone_number: '5791199395', rating: 1 }
+]);
+<{
+  acknowledged: true,
+  insertedIds: {
+    '0': 2,
+    '1': 4,
+    '2': 5,
+    '3': 6,
+    '4': 9,
+    '5': 15,
+    '6': 16,
+    '7': 17
+  }
+}
+
+db.createCollection("Buyer")
+db.Buyer.insertMany([
+  { _id: 1, phone_number: '9803372694' },
+  { _id: 3, phone_number: '1137177958' },
+  { _id: 8, phone_number: '9769737264' },
+  { _id: 12, phone_number: '4824451730' },
+  { _id: 13, phone_number: '2854423003' },
+  { _id: 14, phone_number: '3042801526' }
+]);
+
+ >{
+  acknowledged: true,
+  insertedIds: {
+    '0': 1,
+    '1': 3,
+    '2': 8,
+    '3': 12,
+    '4': 13,
+    '5': 14
+  }
+}
+
+
+db.createCollection("Product")
+db.Product.insertMany([
+  { _id: 21, sizes: 'XS', category: 'Jacket', price: 14632, sid: ObjectId("646665331f81fd655cce3b3d") },
+  { _id: 22, sizes: 'M', category: 'Skirt', price: 24237, sid: ObjectId("646665331f81fd655cce3b3d") },
+  { _id: 23, sizes: 'L', category: 'Shirt', price: 23652, sid: ObjectId("646665331f81fd655cce3b3d") },
+  { _id: 24, sizes: 'L', category: 'Shorts', price: 5327, sid: ObjectId("646665331f81fd655cce3b3e") },
+  { _id: 25, sizes: 'S', category: 'Skirt', price: 17714, sid: ObjectId("646665331f81fd655cce3b3e") },
+  { sizes: 'XS', category: 'Shorts', price: 13557, sid: ObjectId("646665331f81fd655cce3b3e") },
+  { sizes: '2XL', category: 'Shirt', price: 37192, sid: ObjectId("646665331f81fd655cce3b3e") },
+  { sizes: 'M', category: 'Skirt', price: 17519, sid: ObjectId("646665331f81fd655cce3b3f") },
+  { sizes: 'L', category: 'Skirt', price: 9346, sid: ObjectId("646604741f81fd655cce3b3f") },
+  { sizes: '2XL', category: 'Shirt', price: 32797, sid: ObjectId("646604741f81fd655cce3b3f") },
+  { sizes: 'L', category: 'Skirt', price: 21598, sid: ObjectId("646604741f81fd655cce3b3f")},
+  { sizes: 'L', category: 'Jacket', price: 23933, sid: ObjectId("646604741f81fd655cce3b40") },
+  { sizes: 'M', category: 'Shorts', price: 36988, sid: ObjectId("646604741f81fd655cce3b40") },
+  { sizes: 'M', category: 'Shorts', price: 35030, sid: ObjectId("646604741f81fd655cce3b40") },
+  { sizes: 'XS', category: 'Shirt', price: 21901, sid: ObjectId("646604741f81fd655cce3b41") },
+  { sizes: 'XL', category: 'Dress', price: 6407, sid: ObjectId("646604741f81fd655cce3b41") },
+  { sizes: 'S', category: 'Shirt', price: 16514, sid: ObjectId("646604741f81fd655cce3b41") },
+  { sizes: 'L', category: 'Jacket', price: 20062, sid: ObjectId("646604741f81fd655cce3b42") },
+  { sizes: 'M', category: 'Shorts', price: 8189, sid: ObjectId("646604741f81fd655cce3b42") },
+  { sizes: 'L', category: 'Skirt', price: 34377, sid: ObjectId("646604741f81fd655cce3b42") }
+]);
+
+>{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("64660e0f1f81fd655cce3ad9"),
+    '1': ObjectId("64660e0f1f81fd655cce3ada"),
+    '2': ObjectId("64660e0f1f81fd655cce3adb"),
+    '3': ObjectId("64660e0f1f81fd655cce3adc"),
+    '4': ObjectId("64660e0f1f81fd655cce3add"),
+    '5': ObjectId("64660e0f1f81fd655cce3ade"),
+    '6': ObjectId("64660e0f1f81fd655cce3adf"),
+    '7': ObjectId("64660e0f1f81fd655cce3ae0"),
+    '8': ObjectId("64660e0f1f81fd655cce3ae1"),
+    '9': ObjectId("64660e0f1f81fd655cce3ae2"),
+    '10': ObjectId("64660e0f1f81fd655cce3ae3"),
+    '11': ObjectId("64660e0f1f81fd655cce3ae4"),
+    '12': ObjectId("64660e0f1f81fd655cce3ae5"),
+    '13': ObjectId("64660e0f1f81fd655cce3ae6"),
+    '14': ObjectId("64660e0f1f81fd655cce3ae7"),
+    '15': ObjectId("64660e0f1f81fd655cce3ae8"),
+    '16': ObjectId("64660e0f1f81fd655cce3ae9"),
+    '17': ObjectId("64660e0f1f81fd655cce3aea"),
+    '18': ObjectId("64660e0f1f81fd655cce3aeb"),
+    '19': ObjectId("64660e0f1f81fd655cce3aec")
+  }
+}
+
+db.createCollection("Shopping_cart")
+db.Shopping_cart.insertMany([
+  { pid: ObjectId("64660e0f1f81fd655cce3ad9"), bid: ObjectId("646607871f81fd655cce3ad3"), quantity: 1 },
+  { pid: ObjectId("64660e0f1f81fd655cce3ada"), bid: ObjectId("646607871f81fd655cce3ad3"), quantity: 4 },
+  { pid: ObjectId("64660e0f1f81fd655cce3adb"), bid: ObjectId("646607871f81fd655cce3ad3"), quantity: 4 },
+  { pid: ObjectId("64660e0f1f81fd655cce3adc"), bid: ObjectId("646607871f81fd655cce3ad3"), quantity: 8 },
+  { pid: ObjectId("64660e0f1f81fd655cce3add"), bid: ObjectId("646607871f81fd655cce3ad3"), quantity: 5 },
+  { pid: ObjectId("64660e0f1f81fd655cce3ade"), bid: ObjectId("646607871f81fd655cce3ad3"), quantity: 8 },
+  { pid: ObjectId("64660e0f1f81fd655cce3adf"), bid: ObjectId("646607871f81fd655cce3ad4"), quantity: 3 },
+  { pid: ObjectId("64660e0f1f81fd655cce3ae0"), bid: ObjectId("646607871f81fd655cce3ad4"), quantity: 4 },
+  { pid: ObjectId("64660e0f1f81fd655cce3ae1"), bid: ObjectId("646607871f81fd655cce3ad4"), quantity: 5 },
+  { pid: ObjectId("64660e0f1f81fd655cce3ae2"), bid: ObjectId("646607871f81fd655cce3ad4"), quantity: 1 },
+  { pid: ObjectId("64660e0f1f81fd655cce3ae3"), bid: ObjectId("646607871f81fd655cce3ad4"), quantity: 8 },
+  { pid: ObjectId("64660e0f1f81fd655cce3ae4"), bid: ObjectId("646607871f81fd655cce3ad5"), quantity: 7 },
+  { pid: ObjectId("64660e0f1f81fd655cce3ae5"), bid: ObjectId("646607871f81fd655cce3ad5"), quantity: 1 },
+  { pid: ObjectId("64660e0f1f81fd655cce3ae6"), bid: ObjectId("646607871f81fd655cce3ad6"), quantity: 5 },
+  { pid: ObjectId("64660e0f1f81fd655cce3ae7"), bid: ObjectId("646607871f81fd655cce3ad6"), quantity: 3 },
+  { pid: ObjectId("64660e0f1f81fd655cce3ae8"), bid: ObjectId("646607871f81fd655cce3ad7"), quantity: 1 },
+  { pid: ObjectId("64660e0f1f81fd655cce3ae9"), bid: ObjectId("646607871f81fd655cce3ad7"), quantity: 3 },
+  { pid: ObjectId("64660e0f1f81fd655cce3aea"), bid: ObjectId("646607871f81fd655cce3ad8"), quantity: 7 },
+  { pid: ObjectId("64660e0f1f81fd655cce3aeb"), bid: ObjectId("646607871f81fd655cce3ad8"), quantity: 10 },
+  { pid: ObjectId("64660e0f1f81fd655cce3aec"), bid: ObjectId("646607871f81fd655cce3ad8"), quantity: 9 }
+]);
+>{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("64665cb41f81fd655cce3b01"),
+    '1': ObjectId("64665cb41f81fd655cce3b02"),
+    '2': ObjectId("64665cb41f81fd655cce3b03"),
+    '3': ObjectId("64665cb41f81fd655cce3b04"),
+    '4': ObjectId("64665cb41f81fd655cce3b05"),
+    '5': ObjectId("64665cb41f81fd655cce3b06"),
+    '6': ObjectId("64665cb41f81fd655cce3b07"),
+    '7': ObjectId("64665cb41f81fd655cce3b08"),
+    '8': ObjectId("64665cb41f81fd655cce3b09"),
+    '9': ObjectId("64665cb41f81fd655cce3b0a"),
+    '10': ObjectId("64665cb41f81fd655cce3b0b"),
+    '11': ObjectId("64665cb41f81fd655cce3b0c"),
+    '12': ObjectId("64665cb41f81fd655cce3b0d"),
+    '13': ObjectId("64665cb41f81fd655cce3b0e"),
+    '14': ObjectId("64665cb41f81fd655cce3b0f"),
+    '15': ObjectId("64665cb41f81fd655cce3b10"),
+    '16': ObjectId("64665cb41f81fd655cce3b11"),
+    '17': ObjectId("64665cb41f81fd655cce3b12"),
+    '18': ObjectId("64665cb41f81fd655cce3b13"),
+    '19': ObjectId("64665cb41f81fd655cce3b14")
+  }
+}
+
+db.createCollection("Card")
+db.Card.insertMany([
+  { card_number: '4438-3153-5093-5876', CVV: 248, balance: 190490, uid: ObjectId("6465ff561f81fd655cce3ab1") },
+  { card_number: '4947-6154-8489-2263', CVV: 607, balance: 115628, uid: ObjectId("6465ff561f81fd655cce3ab2") },
+  { card_number: '4719-3506-9386-7452', CVV: 841, balance: 50201, uid: ObjectId("6465ff561f81fd655cce3ab3") },
+  { card_number: '4533-1964-2173-2268', CVV: 730, balance: 26918, uid: ObjectId("6465ff561f81fd655cce3ab4") },
+  { card_number: '4032-8681-0298-6571', CVV: 398, balance: 99249, uid: ObjectId("6465ff561f81fd655cce3ab5") },
+  { card_number: '4716-1614-9206-7662', CVV: 417, balance: 142855, uid: ObjectId("6465ff561f81fd655cce3ab6") },
+  { card_number: '4731-0319-8205-5025', CVV: 882, balance: 15239, uid: ObjectId("6465ff561f81fd655cce3ab7") },
+  { card_number: '4040-4311-2028-1689', CVV: 557, balance: 160973, uid: ObjectId("6465ff561f81fd655cce3ab8") },
+  { card_number: '4541-8650-2373-7913', CVV: 881, balance: 112611, uid: ObjectId("6465ff561f81fd655cce3ab9") },
+  { card_number: '4040-0233-1440-3367', CVV: 338, balance: 94906, uid: ObjectId("6465ff561f81fd655cce3aba") },
+  { card_number: '4481-0682-9710-6186', CVV: 573, balance: 136041, uid: ObjectId("6465ff561f81fd655cce3abb") },
+  { card_number: '4274-7829-2861-3573', CVV: 219, balance: 153551, uid: ObjectId("6465ff561f81fd655cce3abc") },
+  { card_number: '4036-6101-5282-1480', CVV: 534, balance: 105522, uid: ObjectId("6465ff561f81fd655cce3abd") },
+  { card_number: '4251-5350-4603-8199', CVV: 985, balance: 65114, uid: ObjectId("6465ff561f81fd655cce3abe") },
+  { card_number: '4552-8937-4737-0510', CVV: 980, balance: 5790, uid: ObjectId("6465ff561f81fd655cce3abf") },		
+  { card_number: '4433-1911-8777-9943', CVV: 414, balance: 9589, uid: ObjectId("6465ff561f81fd655cce3ac0") },
+  { card_number: '4204-2328-7824-6409', CVV: 651, balance: 106413, uid: ObjectId("6465ff561f81fd655cce3ac1")},
+  { card_number: '4230-1512-7801-5842', CVV: 634, balance: 95952, uid: ObjectId("6465ff561f81fd655cce3ac2") },
+  { card_number: '4707-3329-5646-0765', CVV: 154, balance: 74500, uid: ObjectId("6465ff561f81fd655cce3ac3") },
+  { card_number: '4224-7263-6855-0770', CVV: 250, balance: 88154, uid: ObjectId("6465ff561f81fd655cce3ac4") }
+]);
+
+>{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6466642a1f81fd655cce3b15"),
+    '1': ObjectId("6466642a1f81fd655cce3b16"),
+    '2': ObjectId("6466642a1f81fd655cce3b17"),
+    '3': ObjectId("6466642a1f81fd655cce3b18"),
+    '4': ObjectId("6466642a1f81fd655cce3b19"),
+    '5': ObjectId("6466642a1f81fd655cce3b1a"),
+    '6': ObjectId("6466642a1f81fd655cce3b1b"),
+    '7': ObjectId("6466642a1f81fd655cce3b1c"),
+    '8': ObjectId("6466642a1f81fd655cce3b1d"),
+    '9': ObjectId("6466642a1f81fd655cce3b1e"),
+    '10': ObjectId("6466642a1f81fd655cce3b1f"),
+    '11': ObjectId("6466642a1f81fd655cce3b20"),
+    '12': ObjectId("6466642a1f81fd655cce3b21"),
+    '13': ObjectId("6466642a1f81fd655cce3b22"),
+    '14': ObjectId("6466642a1f81fd655cce3b23"),
+    '15': ObjectId("6466642a1f81fd655cce3b24"),
+    '16': ObjectId("6466642a1f81fd655cce3b25"),
+    '17': ObjectId("6466642a1f81fd655cce3b26"),
+    '18': ObjectId("6466642a1f81fd655cce3b27"),
+    '19': ObjectId("6466642a1f81fd655cce3b28")
+  }
+}
+
+db.createCollection("Address")
+db.Address.insertMany([
+  { uid: ObjectId("6465ff561f81fd655cce3ab1"), city: 'Medellin', street: 'Nelson', house: 2.0, entrance: 3, apartment: 52 },
+  { uid: ObjectId("6465ff561f81fd655cce3ab2"), city: 'Magdug', street: 'Elka', house: 3.7, entrance: 2, apartment: 34 },
+  { uid: ObjectId("6465ff561f81fd655cce3ab3"), city: 'Verkhniye Achaluki', street: 'Gateway', house: 1.6, entrance: 2, apartment: 47 },
+  { uid: ObjectId("6465ff561f81fd655cce3ab4"), city: 'Illela', street: 'Spohn', house: 1.3, entrance: 1, apartment: 15 },
+  { uid: ObjectId("6465ff561f81fd655cce3ab5"), city: 'Portobelo', street: 'Arizona', house: 1.6, entrance: 3, apartment: 4 },
+  { uid: ObjectId("6465ff561f81fd655cce3ab6"), city: 'Quán Hàu', street: 'Maywood', house: 2.3, entrance: 3, apartment: 51 },
+  { uid: ObjectId("6465ff561f81fd655cce3ab7"), city: 'Segezha', street: 'Hayes', house: 3.0, entrance: 3, apartment: 47 },
+  { uid: ObjectId("6465ff561f81fd655cce3ab8"), city: 'Banjar Batuaji Kaja', street: 'Fulton', house: 3.6, entrance: 1, apartment: 37 },
+  { uid: ObjectId("6465ff561f81fd655cce3ab9"), city: 'Sierpc', street: 'Lillian', house: 3.7, entrance: 2, apartment: 5 },
+  { uid: ObjectId("6465ff561f81fd655cce3aba"), city: 'Gamawa', street: 'Division', house: 1.4, entrance: 3, apartment: 36 },
+  { uid: ObjectId("6465ff561f81fd655cce3abb"), city: 'Birzai', street: 'Twin Pines', house: 2.3, entrance: 1, apartment: 56 },
+  { uid: ObjectId("6465ff561f81fd655cce3abc"), city: 'Lucaya', street: 'Forster', house: 3.1, entrance: 2, apartment: 51 },
+  { uid: ObjectId("6465ff561f81fd655cce3abd"), city: 'Garland', street: 'Debs', house: 3.7, entrance: 1, apartment: 50 },
+  { uid: ObjectId("6465ff561f81fd655cce3abe"), city: 'Cicheng', street: 'Harper', house: 1.6, entrance: 2, apartment: 40 },
+  { uid: ObjectId("6465ff561f81fd655cce3abf"), city: 'Concepción Tutuapa', street: 'Bay', house: 2.8, entrance: 2, apartment: 47 },
+  { uid: ObjectId("6465ff561f81fd655cce3ac0"), city: 'Pélla', street: 'Sachs', house: 2.5, entrance: 1, apartment: 48 },
+  { uid: ObjectId("6465ff561f81fd655cce3ac1"), city: 'Verkhnyaya Khava', street: 'Melby', house: 3.5, entrance: 1, apartment: 6 },
+  { uid: ObjectId("6465ff561f81fd655cce3ac2"), city: 'Puyehue', street: 'Del Mar', house: 1.2, entrance: 2, apartment: 24 },
+  { uid: ObjectId("6465ff561f81fd655cce3ac3"), city: 'Essang', street: 'Mayfield', house: 2.7, entrance: 2, apartment: 30 },
+  { uid: ObjectId("6465ff561f81fd655cce3ac4"), city: 'Vologda', street: 'Hoffman', house: 2.0, entrance: 1, apartment: 29 }
+]);
+
+>{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("646664631f81fd655cce3b29"),
+    '1': ObjectId("646664631f81fd655cce3b2a"),
+    '2': ObjectId("646664631f81fd655cce3b2b"),
+    '3': ObjectId("646664631f81fd655cce3b2c"),
+    '4': ObjectId("646664631f81fd655cce3b2d"),
+    '5': ObjectId("646664631f81fd655cce3b2e"),
+    '6': ObjectId("646664631f81fd655cce3b2f"),
+    '7': ObjectId("646664631f81fd655cce3b30"),
+    '8': ObjectId("646664631f81fd655cce3b31"),
+    '9': ObjectId("646664631f81fd655cce3b32"),
+    '10': ObjectId("646664631f81fd655cce3b33"),
+    '11': ObjectId("646664631f81fd655cce3b34"),
+    '12': ObjectId("646664631f81fd655cce3b35"),
+    '13': ObjectId("646664631f81fd655cce3b36"),
+    '14': ObjectId("646664631f81fd655cce3b37"),
+    '15': ObjectId("646664631f81fd655cce3b38"),
+    '16': ObjectId("646664631f81fd655cce3b39"),
+    '17': ObjectId("646664631f81fd655cce3b3a"),
+    '18': ObjectId("646664631f81fd655cce3b3b"),
+    '19': ObjectId("646664631f81fd655cce3b3c")
+  }
+}
+
+db.createCollection('Transaction')
+db.Transaction.insertMany([
+  { shid: ObjectId("64665cb41f81fd655cce3b01"), sid: ObjectId("646665331f81fd655cce3b3d"), aid: ObjectId("646665331f81fd655cce3b29"), crid: ObjectId("6466642a1f81fd655cce3b15"), cid: ObjectId("646606361f81fd655cce3acb"), startTime: new Date('2023-03-27'), endTime: new Date('2023-04-01'), status: 'Approved' },
+  { shid: ObjectId("64665cb41f81fd655cce3b02"), sid: ObjectId("646665331f81fd655cce3b3d"), aid: ObjectId("646665331f81fd655cce3b20"), crid: ObjectId("6466642a1f81fd655cce3b16"), cid: ObjectId("646606361f81fd655cce3acc"), startTime: new Date('2021-01-09'), endTime: null, status: 'Pending' },
+  { shid: ObjectId("64665cb41f81fd655cce3b03"), sid: ObjectId("646665331f81fd655cce3b3d"), aid: ObjectId("646665331f81fd655cce3b2b"), crid: ObjectId("6466642a1f81fd655cce3b17"), cid: ObjectId("646606361f81fd655cce3acd"), startTime: new Date('2023-12-02'), endTime: null, status: 'Pending' },
+  { shid: ObjectId("64665cb41f81fd655cce3b04"), sid: ObjectId("646665331f81fd655cce3b3e"), aid: ObjectId("646665331f81fd655cce3b2c"), crid: ObjectId("6466642a1f81fd655cce3b18"), cid: ObjectId("646606361f81fd655cce3ace"), startTime: new Date('2022-10-26'), endTime: new Date('2022-11-11'), status: 'Approved' },
+  { shid: ObjectId("64665cb41f81fd655cce3b05"), sid: ObjectId("646665331f81fd655cce3b3e"), aid: ObjectId("646665331f81fd655cce3b2d"), crid: ObjectId("6466642a1f81fd655cce3b19"), cid: ObjectId("646606361f81fd655cce3acf"), startTime: new Date('2021-10-16'), endTime: null, status: 'Pending' },
+  { shid: ObjectId("64665cb41f81fd655cce3b06"), sid: ObjectId("646665331f81fd655cce3b3e"), aid: ObjectId("646665331f81fd655cce3b2e"), crid: ObjectId("6466642a1f81fd655cce3b1a"), cid: ObjectId("646606361f81fd655cce3ad0"), startTime: new Date('2022-12-04'), endTime: new Date('2022-12-12'), status: 'Approved' },
+  { shid: ObjectId("64665cb41f81fd655cce3b07"), sid: ObjectId("646665331f81fd655cce3b3e"), aid: ObjectId("646665331f81fd655cce3b2f"), crid: ObjectId("6466642a1f81fd655cce3b1b"), cid: ObjectId("646606361f81fd655cce3ad1"), startTime: new Date('2023-02-01'), endTime: new Date('2023-02-07'), status: 'Approved' },
+  { shid: ObjectId("64665cb41f81fd655cce3b08"), sid: ObjectId("646665331f81fd655cce3b3f"), aid: ObjectId("646665331f81fd655cce3b30"), crid: ObjectId("6466642a1f81fd655cce3b1c"), cid: ObjectId("646606361f81fd655cce3ad2"), startTime: new Date('2022-06-21'), endTime: new Date('2022-06-22'), status: 'Approved' },
+  { shid: ObjectId("64665cb41f81fd655cce3b09"), sid: ObjectId("646665331f81fd655cce3b3f"), aid: ObjectId("646665331f81fd655cce3b31"), crid: ObjectId("6466642a1f81fd655cce3b1d"), cid: ObjectId("646606361f81fd655cce3ad2"), startTime: new Date('2022-11-20'), endTime: new Date('2022-11-23'), status: 'Approved' },
+  { shid: ObjectId("64665cb41f81fd655cce3b0a"), sid: ObjectId("646665331f81fd655cce3b3f"), aid: ObjectId("646665331f81fd655cce3b32"), crid: ObjectId("6466642a1f81fd655cce3b1e"), cid: ObjectId("646606361f81fd655cce3ad2"), startTime: new Date('2022-10-06'), endTime: new Date('2022-10-14'), status: 'Approved' },
+  { shid: ObjectId("64665cb41f81fd655cce3b0b"), sid: ObjectId("646665331f81fd655cce3b3f"), aid: ObjectId("646665331f81fd655cce3b33"), crid: ObjectId("6466642a1f81fd655cce3b1f"), cid: ObjectId("646606361f81fd655cce3ad1"), startTime: new Date('2022-10-14'), endTime: new Date('2022-10-29'), status: 'Declined' },
+  { shid: ObjectId("64665cb41f81fd655cce3b0c"), sid: ObjectId("646665331f81fd655cce3b3f"), aid: ObjectId("646665331f81fd655cce3b34"), crid: ObjectId("6466642a1f81fd655cce3b20"), cid: ObjectId("646606361f81fd655cce3ad1"), startTime: new Date('2022-06-10'), endTime: new Date('2022-06-27'), status: 'Declined' },
+  { shid: ObjectId("64665cb41f81fd655cce3b0d"), sid: ObjectId("646665331f81fd655cce3b40"), aid: ObjectId("646665331f81fd655cce3b35"), crid: ObjectId("6466642a1f81fd655cce3b21"), cid: ObjectId("646606361f81fd655cce3ad0"), startTime: new Date('2023-04-01'), endTime: new Date('2023-04-17'), status: 'Declined' },
+  { shid: ObjectId("64665cb41f81fd655cce3b0e"), sid: ObjectId("646665331f81fd655cce3b40"), aid: ObjectId("646665331f81fd655cce3b36"), crid: ObjectId("6466642a1f81fd655cce3b22"), cid: ObjectId("646606361f81fd655cce3ad7"), startTime: new Date('2023-03-02'), endTime: new Date('2023-03-17'), status: 'Declined' },
+  { shid: ObjectId("64665cb41f81fd655cce3b0f"), sid: ObjectId("646665331f81fd655cce3b41"), aid: ObjectId("646665331f81fd655cce3b37"), crid: ObjectId("6466642a1f81fd655cce3b23"), cid: ObjectId("646606361f81fd655cce3ad0"), startTime: new Date('2023-01-10'), endTime: new Date('2023-01-11'), status: 'Approved' },
+  { shid: ObjectId("64665cb41f81fd655cce3b10"), sid: ObjectId("646665331f81fd655cce3b41"), aid: ObjectId("646665331f81fd655cce3b38"), crid: ObjectId("6466642a1f81fd655cce3b24"), cid: 16, startTime: new Date('2023-03-15'), endTime: new Date('2023-04-06'), status: 'Declined' },
+  { shid: ObjectId("64665cb41f81fd655cce3b11"), sid: ObjectId("646665331f81fd655cce3b42"), aid: ObjectId("646665331f81fd655cce3b39"), crid: ObjectId("6466642a1f81fd655cce3b25"), cid: ObjectId("646606361f81fd655cce3ad0"), startTime: new Date('2023-02-11'), endTime: new Date('2023-02-29'), status: 'Declined' },
+  { shid: ObjectId("64665cb41f81fd655cce3b12"), sid: ObjectId("646665331f81fd655cce3b42"), aid: ObjectId("646665331f81fd655cce3b3a"), crid: ObjectId("6466642a1f81fd655cce3b26"), cid: ObjectId("646606361f81fd655cce3acf"), startTime: new Date('2021-01-11'), endTime: null, status: 'Pending' },
+  { shid: ObjectId("64665cb41f81fd655cce3b13"), sid: ObjectId("646665331f81fd655cce3b3d"), aid: ObjectId("646665331f81fd655cce3b3b"), crid: ObjectId("6466642a1f81fd655cce3b27"), cid: ObjectId("646606361f81fd655cce3ace"), startTime: new Date('2022-07-05'), endTime: new Date('2022-07-09'), status: 'Approved' },
+  { shid: ObjectId("64665cb41f81fd655cce3b14"), sid: ObjectId("646665331f81fd655cce3b42"), aid: ObjectId("646665331f81fd655cce3b3c"), crid: ObjectId("6466642a1f81fd655cce3b28"), cid: ObjectId("646606361f81fd655cce3acd"), startTime: new Date('2022-08-23'), endTime: new Date('2022-09-10'), status: 'Declined' }
+]);
+
+>{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("64666c6a1f81fd655cce3b43"),
+    '1': ObjectId("64666c6a1f81fd655cce3b44"),
+    '2': ObjectId("64666c6a1f81fd655cce3b45"),
+    '3': ObjectId("64666c6a1f81fd655cce3b46"),
+    '4': ObjectId("64666c6a1f81fd655cce3b47"),
+    '5': ObjectId("64666c6a1f81fd655cce3b48"),
+    '6': ObjectId("64666c6a1f81fd655cce3b49"),
+    '7': ObjectId("64666c6a1f81fd655cce3b4a"),
+    '8': ObjectId("64666c6a1f81fd655cce3b4b"),
+    '9': ObjectId("64666c6a1f81fd655cce3b4c"),
+    '10': ObjectId("64666c6a1f81fd655cce3b4d"),
+    '11': ObjectId("64666c6a1f81fd655cce3b4e"),
+    '12': ObjectId("64666c6a1f81fd655cce3b4f"),
+    '13': ObjectId("64666c6a1f81fd655cce3b50"),
+    '14': ObjectId("64666c6a1f81fd655cce3b51"),
+    '15': ObjectId("64666c6a1f81fd655cce3b52"),
+    '16': ObjectId("64666c6a1f81fd655cce3b53"),
+    '17': ObjectId("64666c6a1f81fd655cce3b54"),
+    '18': ObjectId("64666c6a1f81fd655cce3b55"),
+    '19': ObjectId("64666c6a1f81fd655cce3b56")
+  }
+}
+
+
+4. The code that will output all the collections in the current database:
+var collectionNames = db.getCollectionNames();
+collectionNames.forEach(function(collectionName) {
+  print(collectionName);
+});
